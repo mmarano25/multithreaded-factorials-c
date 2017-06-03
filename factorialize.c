@@ -69,6 +69,8 @@ int main( int argc, char *argv[] )
     to_factorialize = strtoull( argv[1], NULL, 10 );
     if( errno )
         error( "Converting to ull failed" );
+    if( to_factorialize < 1 || to_factorialize > 20 ) 
+        error( "Invalide range: Can only accept numbers from [1,20]" );
     init_longs( to_factorialize, &half, &three_fourths, &seven_eighths );
 
     // fprintf( stderr, "Num: %llu\nHalf: %llu\n3/4: %llu\n7/8: %llu\n\n", to_factorialize, half, three_fourths, seven_eighths );
